@@ -1,0 +1,91 @@
+‎index.html‎
+-105
+Lines changed: 0 additions & 105 deletions
+Original file line number	Diff line number	Diff line change
+@@ -1,105 +0,0 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geovani | Portfólio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio">inicio</a>
+            </li>
+            <li>
+                <a href="#sobre">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos">Projetos</a>
+            </li>
+            <li>
+                <a href="#contatos">contatos</a>
+            </li>
+        </ul>
+    </nav>
+    <main id="inicio" class="cabecalho">
+        <img src="imagens/eu.jpg " alt="foto-geovani" id="foto-perfil">
+        <h1>Geovani Tomaz</h1>
+        <p id="paragrafo">Desenvolvedor Back-end</p>
+    </main>
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre Mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">Sou um desenvolvedor em início de carreira,Tenho interesse em aprender cada vez
+                mais sobre programação e desenvolvimento de soluções digitais. Sou dedicado, curioso e busco sempre
+                melhorar minhas habilidades, contribuindo para projetos que promovam eficiência e inovação.</p>
+        </div>
+    </section>
+     <h2 class="sobre-titulo">Meus projetos</h2>
+   <section id="projetos" class="projetos">
+        <div class="lista-projetos">
+           
+                <div class="caixa-projeto">
+            <img src="imagens/cordel_moderno.jpg" alt="imagem_cordel-moderno">
+            <p>Cordel Moderno <strong>HTML/CSS</strong>.</p>
+                </div>
+              <a href="https://github.com/Geovani566/Lista_compras" target="_blank">
+                  <div class="caixa-projeto">
+                              <img src="imagens/compras.png" alt="imagem_cordel-moderno">
+                              <p>Lista de Compras – Terminal - <strong>Python,biblioteca colorama,json</strong></p>
+                    </div>
+              </a>
+              <div class="caixa-projeto">
+            <img src="imagens/cordel_moderno.jpg" alt="imagem_cordel-moderno">
+            <p>Projeto para fixar conhecimentos em <strong>HTML/CSS</strong>.</p>
+                </div>
+        </div>
+   </section>
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Contatos</h2>
+        <form class="formulario-contato" id="formulario" onsubmit="enviarmsg(event)">
+            <div class="grupo-form">
+                <input id="nome" placeholder="Nome:" class="campo-form">
+            </div>
+            <div class="grupo-form">
+                <textarea id="mensagem" class="campo-form " placeholder="Digite sua mensagem:"></textarea>
+            </div>
+            <button type="submit" class="botao">Enviar WhatsApp</button>
+        </form>
+    </section>
+    <script>
+        function enviarmsg(event) {
+            event.preventDefault();
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '5548996348153';
+            const texto = `Olá! Me chamo ${nome},${mensagem}`;
+            const msgformatada = encodeURIComponent(texto);
+            const link = `https://wa.me/${telefone}?text=${msgformatada}`;
+            window.open(link, '_blank');
+        }
+    </script>
+</body>
