@@ -1,11 +1,9 @@
-‎index.html‎
--105
-Lines changed: 0 additions & 105 deletions
-Original file line number	Diff line number	Diff line change
-@@ -1,105 +0,0 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <canvas id="galaxy-bg"></canvas>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Geovani | Portfólio</title>
@@ -36,6 +34,10 @@ Original file line number	Diff line number	Diff line change
         <h1>Geovani Tomaz</h1>
         <p id="paragrafo">Desenvolvedor Back-end</p>
     </main>
+
+
+
+
     <section id="sobre" class="sobre">
         <h2 class="sobre-titulo">Sobre Mim</h2>
         <div class="sobre-caixa">
@@ -43,25 +45,57 @@ Original file line number	Diff line number	Diff line change
                 mais sobre programação e desenvolvimento de soluções digitais. Sou dedicado, curioso e busco sempre
                 melhorar minhas habilidades, contribuindo para projetos que promovam eficiência e inovação.</p>
         </div>
+         <h2 class="sobre-titulo">Habilidades</h2>
+        <div class="habilidades">
+            <h2 >Hard Skills</h2>
+            <ul>
+                <li>Python</li>
+                <li>Flutter</li>
+                <li>Git e GitHub</li>
+                <li>HTML, CSS</li>
+                <li>Java Script</li>
+            </ul>
+        </div>
+        <div class="habilidades">
+            <h2>Soft Skills</h2>
+            <ul>
+                <li>Trabalho em equipe</li>
+                <li>Comunicação eficaz</li>
+                <li>Resolução de problemas</li>
+                <li>Organização e disciplina</li>
+                <li>Aprendizado contínuo</li>
+            </ul>
+        </div>
+        
     </section>
+
+
+
+
+
+
      <h2 class="sobre-titulo">Meus projetos</h2>
    <section id="projetos" class="projetos">
         <div class="lista-projetos">
            
-                <div class="caixa-projeto">
-            <img src="imagens/cordel_moderno.jpg" alt="imagem_cordel-moderno">
-            <p>Cordel Moderno <strong>HTML/CSS</strong>.</p>
-                </div>
+                <a href="https://geovani566.github.io/Cordel-moderno/" target="_blank">
+                    <div class="caixa-projeto">
+                                <img src="imagens/cordel_moderno.jpg" alt="imagem_cordel-moderno">
+                                <p>Cordel Moderno <br><strong>HTML/CSS</strong>.</p>
+                    </div>
+                </a>
               <a href="https://github.com/Geovani566/Lista_compras" target="_blank">
                   <div class="caixa-projeto">
                               <img src="imagens/compras.png" alt="imagem_cordel-moderno">
-                              <p>Lista de Compras – Terminal - <strong>Python,biblioteca colorama,json</strong></p>
+                              <p>Lista de Compras <br><strong>Python,biblioteca colorama,json</strong></p>
                     </div>
               </a>
-              <div class="caixa-projeto">
-            <img src="imagens/cordel_moderno.jpg" alt="imagem_cordel-moderno">
-            <p>Projeto para fixar conhecimentos em <strong>HTML/CSS</strong>.</p>
-                </div>
+              <a href="https://github.com/Geovani566/Projeto_cpf.git" target="_blan">
+                  <div class="caixa-projeto">
+                              <img src="imagens/cpf.png" alt="imagem_projeto_cpf">
+                              <p>Validador/Gerador de cpf <br><strong>Python</strong></p>
+                    </div>
+              </a>
         </div>
    </section>
     <section id="contatos" class="contatos">
@@ -77,6 +111,59 @@ Original file line number	Diff line number	Diff line change
         </form>
     </section>
     <script>
+        const canvas = document.getElementById('galaxy-bg');
+const ctx = canvas.getContext('2d');
+
+let stars = [];
+const numStars = 200;
+
+// Ajusta o canvas para ocupar toda a tela
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+// Cria estrelas e asteroides
+for (let i = 0; i < numStars; i++) {
+    stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 1.5 + 0.5, // tamanho da estrela
+        speedX: Math.random() * 0.5 + 0.1, // velocidade diagonal horizontal
+        speedY: Math.random() * 0.5 + 0.1, // velocidade diagonal vertical
+        isAsteroid: Math.random() < 0.05,  // 5% serão asteroides
+        color: Math.random() < 0.5 ? 'white' : '#aaa' // cores variadas
+    });
+}
+
+// Animação
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    for (let star of stars) {
+        ctx.beginPath();
+        ctx.fillStyle = star.color;
+        ctx.arc(star.x, star.y, star.isAsteroid ? star.radius * 3 : star.radius, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Move na diagonal
+        star.x += star.speedX;
+        star.y += star.speedY;
+
+        // Se sair da tela, reinicia na parte superior ou lateral
+        if (star.y > canvas.height || star.x > canvas.width) {
+            star.y = Math.random() * -50;
+            star.x = Math.random() * canvas.width;
+        }
+    }
+
+    requestAnimationFrame(animate);
+}
+
+animate();
++
         function enviarmsg(event) {
             event.preventDefault();
             const nome = document.getElementById('nome').value;

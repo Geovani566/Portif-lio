@@ -10,6 +10,15 @@ html {
      font-family: "Fira Code", monospace;
     scroll-behavior: smooth;
 }
+#galaxy-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: #000; /* Fundo preto */
+}
 
 
    
@@ -227,7 +236,22 @@ box-shadow: 7px 7px 14px 0px #9ef0eac2;
     transform: translateY(4px);
     box-shadow: 0 5px 15px var(--vidro);
 }
-
+.habilidades {
+    font-weight: bold;
+    display: inline-block;
+    width: 300px;
+    transition: transform 0.5s;
+    padding: 30px;
+    margin: 15px;
+text-align: left;
+    border-radius: 10px;
+    background-color: var(--secundaria);
+    vertical-align: top;
+    box-sizing: border-box;
+}
+.habilidades:hover{
+    transform: scale(1.2);
+}
 
 @keyframes flutuar {
     0% ,100%{
