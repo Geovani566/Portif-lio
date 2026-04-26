@@ -95,8 +95,10 @@ background-color: var(--cor-borda);
   grid-template-columns: 1fr auto;
   align-items: center;
   gap: 2rem;
-  padding: 7rem 2rem 4rem;  /* era 3rem no topo, agora 7rem igual as outras seções */
-  min-height: 100vh;         /* ocupa exatamente a altura da tela, sem espaço vazio */
+  padding: 7rem 2rem 4rem;
+  min-height: 100vh;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 #foto_perfil{
