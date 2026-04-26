@@ -1,178 +1,423 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <canvas id="galaxy-bg"></canvas>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geovani | Portfólio</title>
+    <title>Geovani Tomaz | Desenvolvedor</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navegacao">
-        <ul class="menu">
-            <li>
-                <a href="#inicio">inicio</a>
-            </li>
-            <li>
-                <a href="#sobre">Sobre</a>
-            </li>
-            <li>
-                <a href="#projetos">Projetos</a>
-            </li>
-            <li>
-                <a href="#contatos">contatos</a>
-            </li>
+<canvas id="cursor-canvas"></canvas>
+    <!-- NAV -->
+    <nav>
+        <span class="nav-logo">geovani.dev</span>
+        <ul class="nav-links">
+            <li><a href="#inicio">início</a></li>
+            <li><a href="#sobre">sobre</a></li>
+            <li><a href="#certificados">certificados</a></li>
+            <li><a href="#projetos">projetos</a></li>
+            <li><a href="#contato">contato</a></li>
         </ul>
     </nav>
-    <main id="inicio" class="cabecalho">
-        <img src="imagens/eu.jpg " alt="foto-geovani" id="foto-perfil">
-        <h1>Geovani Tomaz</h1>
-        <p id="paragrafo">Desenvolvedor Back-end</p>
-    </main>
 
+    <!-- INÍCIO -->
+    <section id="inicio">
+  <div class="hero-content">
+    <p class="hero-pretitle">// olá, mundo 👋</p>
+    <h1 class="hero-nome">Geovani Tomaz</h1>
+    <p class="hero-cargo">Desenvolvedor Back-end</p>
+    <p class="hero-desc">
+      Estudante de ADS apaixonado por tecnologia. Gosto de resolver problemas e aprender coisas novas todos os dias.
+    </p>
+    <div class="hero-botoes">
+      <a href="#projetos" class="btn-principal">Ver projetos</a>
+      <a href="#contato" class="btn-secundario">Falar comigo</a>
+    </div>
+  </div>
+  <img id="foto_perfil" src="foto_perfil.png" alt="Foto de Geovani Tomaz">
+</section>
 
+    <!-- SOBRE -->
+    <section id="sobre">
+        <p class="titulo-secao">sobre mim</p>
 
-
-    <section id="sobre" class="sobre">
-        <h2 class="sobre-titulo">Sobre Mim</h2>
-        <div class="sobre-caixa">
-            <p class="sobre-paragrafo">Sou um desenvolvedor em início de carreira,Tenho interesse em aprender cada vez
-                mais sobre programação e desenvolvimento de soluções digitais. Sou dedicado, curioso e busco sempre
-                melhorar minhas habilidades, contribuindo para projetos que promovam eficiência e inovação.</p>
+        <div class="sobre-texto">
+            <p>
+                Sou um desenvolvedor em início de carreira com interesse em desenvolvimento back-end e soluções digitais.
+                Dedicado e curioso, busco evoluir constantemente e contribuir para projetos que promovam eficiência e inovação.
+            </p>
+            <p>
+                Atualmente cursando <strong>Análise e Desenvolvimento de Sistemas</strong>.
+            </p>
         </div>
-         <h2 class="sobre-titulo">Habilidades</h2>
-        <div class="habilidades">
-            <h2 >Hard Skills</h2>
-            <ul>
-                <li>Python</li>
-                <li>Flutter</li>
-                <li>Git e GitHub</li>
-                <li>HTML, CSS</li>
-                <li>Java Script</li>
-            </ul>
+
+        <!-- Skills com abas -->
+        <div class="skills-wrapper">
+            <p class="skills-label">// habilidades</p>
+
+            <div class="skills-tabs">
+                <button class="skill-tab ativo" onclick="trocarAba(this, 'backend')">Back-end</button>
+                <button class="skill-tab" onclick="trocarAba(this, 'frontend')">Front-end</button>
+                <button class="skill-tab" onclick="trocarAba(this, 'ferramentas')">Ferramentas</button>
+                <button class="skill-tab" onclick="trocarAba(this, 'soft')">Soft Skills</button>
+            </div>
+
+            <!-- Painel: Back-end -->
+            <div class="skills-painel ativo" id="painel-backend">
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <span class="skill-icone">🐍</span>
+                        <span class="skill-nome">Python</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-icone">🦄</span>
+                        <span class="skill-nome">Django</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-icone">🗄️</span>
+                        <span class="skill-nome">SQLite</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Painel: Front-end -->
+            <div class="skills-painel" id="painel-frontend">
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <span class="skill-icone">🌐</span>
+                        <span class="skill-nome">HTML</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-icone">🎨</span>
+                        <span class="skill-nome">CSS</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-icone">⚡</span>
+                        <span class="skill-nome">JavaScript</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-icone">📱</span>
+                        <span class="skill-nome">Flutter</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Painel: Ferramentas -->
+            <div class="skills-painel" id="painel-ferramentas">
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <span class="skill-icone">🔀</span>
+                        <span class="skill-nome">Git</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-icone">🐙</span>
+                        <span class="skill-nome">GitHub</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Painel: Soft Skills -->
+            <div class="skills-painel" id="painel-soft">
+                <div class="soft-grid">
+                    <span class="soft-badge">Trabalho em equipe</span>
+                    <span class="soft-badge">Comunicação</span>
+                    <span class="soft-badge">Resolução de problemas</span>
+                    <span class="soft-badge">Aprendizado contínuo</span>
+                    <span class="soft-badge">Proatividade</span>
+                    <span class="soft-badge">Adaptabilidade</span>
+                </div>
+            </div>
         </div>
-        <div class="habilidades">
-            <h2>Soft Skills</h2>
-            <ul>
-                <li>Trabalho em equipe</li>
-                <li>Comunicação eficaz</li>
-                <li>Resolução de problemas</li>
-                <li>Organização e disciplina</li>
-                <li>Aprendizado contínuo</li>
-            </ul>
-        </div>
-        
     </section>
 
+    <!-- CERTIFICADOS -->
+    <section id="certificados">
+        <p class="titulo-secao">certificados</p>
 
+        <div class="certs-grid">
 
+            <!--
+                COMO ADICIONAR UM CERTIFICADO:
+                Copie o bloco abaixo e preencha com seus dados.
+                Em href="..." coloque o link do certificado (ex: link do LinkedIn ou do curso).
+                Se não tiver link, use: <div class="cert-card"> em vez de <a href="..." class="cert-card">
+            -->
 
+            <!-- Certificado de exemplo 1 -->
+            <a href="#" target="_blank" class="cert-card">
+                <span class="cert-icone">🎓</span>
+                <div class="cert-info">
+                    <p class="cert-titulo">Nome do Certificado</p>
+                    <p class="cert-emissor">Plataforma / Instituição</p>
+                    <p class="cert-data">Mês · Ano</p>
+                </div>
+            </a>
 
+            <!-- Certificado de exemplo 2 -->
+            <a href="#" target="_blank" class="cert-card">
+                <span class="cert-icone">📜</span>
+                <div class="cert-info">
+                    <p class="cert-titulo">Outro Certificado</p>
+                    <p class="cert-emissor">Plataforma / Instituição</p>
+                    <p class="cert-data">Mês · Ano</p>
+                </div>
+            </a>
 
-     <h2 class="sobre-titulo">Meus projetos</h2>
-   <section id="projetos" class="projetos">
-        <div class="lista-projetos">
-           
-                <a href="https://geovani566.github.io/Cordel-moderno/" target="_blank">
-                    <div class="caixa-projeto">
-                                <img src="imagens/cordel_moderno.jpg" alt="imagem_cordel-moderno">
-                                <p>Cordel Moderno <br><strong>HTML/CSS</strong>.</p>
-                    </div>
-                </a>
-              <a href="https://github.com/Geovani566/Lista_compras" target="_blank">
-                  <div class="caixa-projeto">
-                              <img src="imagens/compras.png" alt="imagem_cordel-moderno">
-                              <p>Lista de Compras <br><strong>Python,biblioteca colorama,json</strong></p>
-                    </div>
-              </a>
-              <a href="https://github.com/Geovani566/Projeto_cpf.git" target="_blan">
-                  <div class="caixa-projeto">
-                              <img src="imagens/cpf.png" alt="imagem_projeto_cpf">
-                              <p>Validador/Gerador de cpf <br><strong>Python</strong></p>
-                    </div>
-              </a>
+            <!-- Espaço para adicionar mais -->
+            <div class="cert-card cert-add">
+                <span style="font-size:1.4rem;"></span>
+                <span>adicionar certificado</span>
+            </div>
+
         </div>
-   </section>
-    <section id="contatos" class="contatos">
-        <h2 class="contatos-titulo">Contatos</h2>
-        <form class="formulario-contato" id="formulario" onsubmit="enviarmsg(event)">
-            <div class="grupo-form">
-                <input id="nome" placeholder="Nome:" class="campo-form">
-            </div>
-            <div class="grupo-form">
-                <textarea id="mensagem" class="campo-form " placeholder="Digite sua mensagem:"></textarea>
-            </div>
-            <button type="submit" class="botao">Enviar WhatsApp</button>
+    </section>
+
+    <!-- PROJETOS -->
+    <section id="projetos">
+        <p class="titulo-secao">projetos</p>
+
+        <!-- Filtros por tecnologia -->
+        <div class="projetos-filtros">
+            <button class="filtro-btn ativo" onclick="filtrar(this, 'todos')">todos</button>
+            <button class="filtro-btn" onclick="filtrar(this, 'python')">Python</button>
+            <button class="filtro-btn" onclick="filtrar(this, 'web')">Web</button>
+            <button class="filtro-btn" onclick="filtrar(this, 'flutter')">Flutter</button>
+        </div>
+
+        <div class="projetos-grid" id="projetos-grid">
+
+           <!-- Cordel Moderno — tem demo E github -->
+<div class="projeto-card destaque" data-tags="web">
+    <img src="imagens/cordel_moderno.jpg" alt="Cordel Moderno">
+    <div class="projeto-info">
+        <div class="projeto-badges">
+            <span class="projeto-badge">HTML</span>
+            <span class="projeto-badge">CSS</span>
+            <span class="projeto-badge">destaque</span>
+        </div>
+        <p class="projeto-titulo">Cordel Moderno</p>
+        <p class="projeto-desc">Página web inspirada na literatura de cordel, com layout responsivo e design criativo usando apenas HTML e CSS.</p>
+        <div class="projeto-links">
+            <a href="https://github.com/Geovani566/Cordel-moderno" target="_blank" class="projeto-link projeto-link-github">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.579.688.481C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                GitHub
+            </a>
+            <a href="https://geovani566.github.io/Cordel-moderno/" target="_blank" class="projeto-link projeto-link-demo">
+                ↗ ver projeto
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Pokedex-->
+<div class="projeto-card destaque" data-tags="web">
+    <img src="imagens\pokedex.png" alt="Cordel Moderno">
+    <div class="projeto-info">
+        <div class="projeto-badges">
+            <span class="projeto-badge">HTML</span>
+            <span class="projeto-badge">CSS</span>
+            <span class="projeto-badge">JavasScript</span>
+                        <span class="projeto-badge">PokéAPI</span>
+
+        </div>
+        <p class="projeto-titulo">Cordel Moderno</p>
+        <p class="projeto-desc">Pokédex em JavaScript consumindo API externa, com busca dinâmica, navegação entre Pokémon e tratamento de erros usando async/await.</p>
+        <div class="projeto-links">
+            <a href="https://github.com/Geovani566/Pokedex.git" target="_blank" class="projeto-link projeto-link-github">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.579.688.481C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                GitHub
+            </a>
+            <a href="https://geovani566.github.io/Pokedex/" target="_blank" class="projeto-link projeto-link-demo">
+                ↗ ver projeto
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Lista de Compras — só tem github -->
+<div class="projeto-card" data-tags="python">
+    <img src="imagens/compras.png" alt="Lista de Compras">
+    <div class="projeto-info">
+        <div class="projeto-badges">
+            <span class="projeto-badge">Python</span>
+            <span class="projeto-badge">JSON</span>
+            <span class="projeto-badge">Colorama</span>
+
+        </div>
+        <p class="projeto-titulo">Lista de Compras</p>
+        <p class="projeto-desc">Aplicação CLI para gerenciar listas de compras com persistência em JSON e interface colorida.</p>
+        <div class="projeto-links">
+            <a href="https://github.com/Geovani566/Lista_compras" target="_blank" class="projeto-link projeto-link-github">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.579.688.481C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                GitHub
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Validador de CPF —-->
+<div class="projeto-card" data-tags="python">
+    <img src="imagens/gerador_cpf.png" alt="Validador de CPF">
+    <div class="projeto-info">
+        <div class="projeto-badges">
+            <div class="projeto-badges">
+    <span class="projeto-badge">Python</span>
+    <span class="projeto-badge">Django</span>
+    <span class="projeto-badge">Web App</span>
+    <span class="projeto-badge">Validação em tempo real</span>
+    <span class="projeto-badge">Deploy</span>
+</div>
+
+        </div>
+        <p class="projeto-titulo">Validador / Gerador de CPF</p>
+        <p class="projeto-desc">Ferramenta para validar e gerar CPFs com verificação de dígitos usando algoritmo oficial.</p>
+        <div class="projeto-links">
+            <a href="https://github.com/Geovani566/Projeto_cpf" target="_blank" class="projeto-link projeto-link-github">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.579.688.481C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                GitHub
+            </a>
+             <a href="https://projeto-cpf.onrender.com" target="_blank" class="projeto-link projeto-link-demo">
+                ↗ ver projeto
+            </a>
+        </div>
+    </div>
+</div>
+
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato">
+        <p class="titulo-secao">contato</p>
+        <p class="contato-desc">
+            Quer bater um papo, tirar dúvida ou propor uma parceria? Me manda uma mensagem!
+        </p>
+
+        <form class="formulario" onsubmit="enviarWhatsapp(event)">
+            <input id="nome" type="text" placeholder="Seu nome" required>
+            <textarea id="mensagem" placeholder="Sua mensagem..." required></textarea>
+            <button type="submit" class="btn-principal">Enviar pelo WhatsApp</button>
         </form>
     </section>
+
+
+
+
+
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>feito com 💻 por Geovani Tomaz · 2025</p>
+    </footer>
+
     <script>
-        const canvas = document.getElementById('galaxy-bg');
+   const canvas = document.getElementById('cursor-canvas');
 const ctx = canvas.getContext('2d');
 
-let stars = [];
-const numStars = 200;
-
-// Ajusta o canvas para ocupar toda a tela
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 }
-window.addEventListener('resize', resizeCanvas);
-resizeCanvas();
+resize();
+window.addEventListener('resize', resize);
 
-// Cria estrelas e asteroides
-for (let i = 0; i < numStars; i++) {
-    stars.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        radius: Math.random() * 1.5 + 0.5, // tamanho da estrela
-        speedX: Math.random() * 0.5 + 0.1, // velocidade diagonal horizontal
-        speedY: Math.random() * 0.5 + 0.1, // velocidade diagonal vertical
-        isAsteroid: Math.random() < 0.05,  // 5% serão asteroides
-        color: Math.random() < 0.5 ? 'white' : '#aaa' // cores variadas
-    });
-}
+const HISTORY = 15;
+let history = Array(HISTORY).fill(null).map(() => ({ x: -999, y: -999 }));
+let mouse = { x: -999, y: -999 };
 
-// Animação
+document.addEventListener('mousemove', (e) => {
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+});
+
+const colors = [
+    '#00e5c8', // cor principal
+    '#00cbb2',
+    '#00b39c',
+    '#33f0d6',
+    '#66ffe6'
+];
 function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  history.unshift({ x: mouse.x, y: mouse.y });
+  history.pop();
 
-    for (let star of stars) {
-        ctx.beginPath();
-        ctx.fillStyle = star.color;
-        ctx.arc(star.x, star.y, star.isAsteroid ? star.radius * 3 : star.radius, 0, Math.PI * 2);
-        ctx.fill();
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        // Move na diagonal
-        star.x += star.speedX;
-        star.y += star.speedY;
+  if (history[0].x < 0) { requestAnimationFrame(animate); return; }
 
-        // Se sair da tela, reinicia na parte superior ou lateral
-        if (star.y > canvas.height || star.x > canvas.width) {
-            star.y = Math.random() * -50;
-            star.x = Math.random() * canvas.width;
-        }
-    }
+  for (let i = 1; i < HISTORY; i++) {
+    const prev = history[i - 1];
+    const curr = history[i];
+    if (curr.x < 0) break;
 
-    requestAnimationFrame(animate);
+    const t = i / HISTORY;
+    const alpha = (1 - t) * 0.9;
+    const width = (1 - t) * 6 + 0.5;
+    const colorIdx = Math.floor((i / HISTORY) * colors.length);
+    const hex = colors[Math.min(colorIdx, colors.length - 1)];
+
+    ctx.beginPath();
+    ctx.moveTo(prev.x, prev.y);
+    ctx.lineTo(curr.x, curr.y);
+    ctx.strokeStyle = hex + Math.round(alpha * 255).toString(16).padStart(2, '0');
+    ctx.lineWidth = width;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    ctx.stroke();
+  }
+
+  // cursor branco
+  const cx = history[0].x;
+  const cy = history[0].y;
+  ctx.beginPath();
+  ctx.arc(cx, cy, 5, 0, Math.PI * 2);
+  ctx.fillStyle = '#ffffff';
+  ctx.fill();
+
+  ctx.beginPath();
+  ctx.arc(cx, cy, 9, 0, Math.PI * 2);
+  ctx.strokeStyle = 'rgba(255,255,255,0.25)';
+  ctx.lineWidth = 1;
+  ctx.stroke();
+
+  requestAnimationFrame(animate);
 }
 
 animate();
-+
-        function enviarmsg(event) {
+        /* ===== ABAS DE SKILLS ===== */
+        function trocarAba(botao, painel) {
+            document.querySelectorAll('.skill-tab').forEach(b => b.classList.remove('ativo'));
+            document.querySelectorAll('.skills-painel').forEach(p => p.classList.remove('ativo'));
+            botao.classList.add('ativo');
+            document.getElementById('painel-' + painel).classList.add('ativo');
+        }
+
+        /* ===== FILTRO DE PROJETOS ===== */
+        function filtrar(botao, tag) {
+            document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('ativo'));
+            botao.classList.add('ativo');
+
+            document.querySelectorAll('.projeto-card').forEach(card => {
+                if (tag === 'todos') {
+                    card.style.display = 'block';
+                } else {
+                    const tags = card.dataset.tags || '';
+                    card.style.display = tags.includes(tag) ? 'block' : 'none';
+                }
+            });
+        }
+
+        /* ===== WHATSAPP ===== */
+        function enviarWhatsapp(event) {
             event.preventDefault();
             const nome = document.getElementById('nome').value;
             const mensagem = document.getElementById('mensagem').value;
             const telefone = '5548996348153';
-            const texto = `Olá! Me chamo ${nome},${mensagem}`;
-            const msgformatada = encodeURIComponent(texto);
-            const link = `https://wa.me/${telefone}?text=${msgformatada}`;
-            window.open(link, '_blank');
+            const texto = `Olá! Me chamo ${nome}. ${mensagem}`;
+            window.open(`https://wa.me/${telefone}?text=${encodeURIComponent(texto)}`, '_blank');
         }
     </script>
+
 </body>
+</html>
