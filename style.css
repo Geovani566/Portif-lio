@@ -152,14 +152,6 @@ background-color: var(--cor-borda);
 
 .orbit-icon:hover { border-color: var(--cor-destaque); }
 
-.icon-python { color: #00e5c8; }
-.icon-html { color: #00e5c8; }
-.icon-javascript { color: #00e5c8; }
-.icon-css { color: #00e5c8; }
-.icon-github { color: #00e5c8; }
-
-
-
 
 .hero-pretitle {
 font-family: 'Fira Code', monospace;
@@ -363,7 +355,13 @@ transition: border-color 0.3s, transform 0.2s;
 border-color: var(--cor-destaque);
 transform: translateY(-3px);
 }
-
+.cert-icone {
+    width: 32px;       
+    height: 32px;      
+    flex-shrink: 0;    
+    margin-top: 2px;   
+    object-fit: contain; 
+}
 .cert-icone {
 font-size: 1.6rem;
 flex-shrink: 0;
@@ -505,6 +503,7 @@ display: block;
 filter: grayscale(20%);
 transition: filter 0.3s;
 }
+
 
 .projeto-card.destaque img { height: 220px; }
 
